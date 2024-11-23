@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('/Img/imagenJuego.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+/*Diseño del Contenedor Principal*/
+.ContenedorPrincipal{
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 80%;
+    height: 65%;
+    padding: 20px;
+    max-width: 50%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    z-index: 2;
+}
+.titulos{
+    width: 100%;
+    height: 18%;
+    display: flex;
+    text-align: center;
+}
+#texto{
+    font-weight: bold; 
+    text-align: center;
+    font-size: 25px; 
+    text-align: center;
+    margin: 10px auto;
+    color: rgb(7, 7, 114); 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 
+    0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 
+    0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 
+    0 20px 20px rgba(0,0,0,0.15);
+    max-width: 100%;
+}
+/*Diseño del icono de cerrar sesión*/
+#BotonSalir{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+}
+ion-icon{
+    display: flex;
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: rgb(15, 225, 225);
+    font-size: 20px;
+    color: black;
+    transition: transform 0.5s ease-in-out;
+    border:1px solid black;
+}
+.Resultado{
+    width: 100%;
+    height: 100%;
+}
+/* Diseño de imagenes*/
+.ImagenesResultado{
+    display: flex;
+    height: 80%;
+}
+.ImagenesResultado img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    padding: 10px;
+    margin: 30px auto;
+}
+.vs{
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+
+}
+/*animaciones de las opciones*/
+.OpcionUsario{
+    transform: rotate(90deg);
+}
+.OpcionCPU{
+    transform: rotate(-90deg);
+}
+/*animaciones del div dinamico resultados*/
+.resultados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold; 
+    font-size: 40px; 
+    color: purple; 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 
+    0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 
+    0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 
+    0 20px 20px rgba(0,0,0,0.15);
+}
+
+/*Diseño de las opciones*/
+.ImagenesOpcion{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 40%;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+.OpcionImagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 60%;
+    width: 20%;
+}
+.OpcionImagen img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.OpcionImagen p{
+    font-weight: bold;
+    font-size: 19px;
+}
+.OpcionImagen img{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(51, 51, 175);
+}
+/*Diseño de los botones de imagenes*/
+#piedra:hover {
+    transform: scale(1.1) rotate(30deg);
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+#papel:hover {
+    transform: scale(1.1) rotate(35deg);
+    opacity: 1;
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+#Tijera:hover {
+    transform: scale(1.1) rotate(-30deg);
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Animaciones de espera para la imagen del jugador y CPU*/
+.OpcionUsario img, .OpcionCPU img {
+    transition: transform 0.5s ease-in-out;
+}
+.espere .OpcionUsario img {
+    animation: girarJugador 0.5s linear infinite;
+}
+.espere .OpcionCPU img {
+    animation: girarCPU 0.5s linear infinite;
+}
+@keyframes girarJugador {
+    50% {
+        transform: rotate(-40deg);
+    }
+}
+@keyframes girarCPU {
+    50% {
+        transform: rotate(40deg);
+    }
+}
+/*Estilos para el boton de salir*/
+.ContenedorBoton{
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+.ContenedorBoton:hover{
+    transform: scale(1.2) !important;
+}
+ion-icon:hover{
+    transform: scale(1.2);
+}
